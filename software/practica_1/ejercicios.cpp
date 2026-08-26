@@ -10,7 +10,7 @@ using std::endl;
 
     Ejercicio #01
 
-    Escriba un programa que pida dos numeros A y B e imprima en pantalla el residuo de la division A/B.
+    Un programa que pida dos numeros A y B e imprima en pantalla el residuo de la division A/B.
         Por ejemplo, si se ingresan 8 y 3 se debe imprimir:
             El residuo de la division 8/3 es: 2
 
@@ -33,7 +33,7 @@ void ejercicio_1(){
 
 /*
 
-    Escriba un programa que pida un mumero N e imprima en pantalla si es par o impar.
+    Un programa que pida un mumero N e imprima en pantalla si es par o impar.
         Por ejemplo, si se ingresa 5 se debe imprimir:
             El numero 5 es impar
 
@@ -57,7 +57,7 @@ void ejercicio_2() {
 
 
 /*
-    Escriba un programa que pida dos numeros A y B e imprima en pantalla el mayor entre ellos.
+    Un programa que pida dos numeros A y B e imprima en pantalla el mayor entre ellos.
         Por ejemplo, si se ingresan 7 y 3 se debe imprimir:
             El mayor es 7
  */
@@ -83,7 +83,7 @@ void ejercicio_3(){
 }
 
 /*
-    Escriba un programa que pida dos numeros A y B e imprima en pantalla el menor.
+    Un programa que pida dos numeros A y B e imprima en pantalla el menor.
         Por ejemplo, si se ingresan 7 y 3 se debe imprimir:
             El menor es 3
 
@@ -111,7 +111,7 @@ void ejercicio_4(){
 
 /*
 
-    Escriba un programa que pida dos numeros A y B e imprima en pantalla la division A/B con redondeo.
+    Un programa que pida dos numeros A y B e imprima en pantalla la division A/B con redondeo.
         Por ejemplo, si se ingresan 8 y 3
             se debe imprimir: 8/3 = 3
         Si se ingresan 7 y 3
@@ -138,7 +138,7 @@ void ejercicio_5(){
 
 /*
 
-    Escriba un programa que pida dos numeros A y B e imprima en pantalla la potencia A^B, sin hacer
+    Un programa que pida dos numeros A y B e imprima en pantalla la potencia A^B, sin hacer
     uso de librerıas matematicas.
         Por ejemplo, si se ingresan 5 y 3 se debe imprimir:
             5^3=125
@@ -168,7 +168,7 @@ void ejercicio_6(){
 
 
 /*
-    Escriba un programa que pida un numero N e imprima en pantalla la suma de todos los numeros
+    Un programa que pida un numero N e imprima en pantalla la suma de todos los numeros
     entre 0 y N, incluyendo N.
         Por ejemplo, si se ingresa 5: (1+2+3+4+5=15), se debe imprimir:
             La sumatoria desde 0 hasta 5 es: 15
@@ -195,7 +195,7 @@ void ejercicio_7(){
 
 /*
 
-    Escriba un programa que pida un numero N e imprima en pantalla el resultado de su factorial.
+    Un programa que pida un numero N e imprima en pantalla el resultado de su factorial.
         Por ejemplo, si se ingresa 5: (5!=1·2·3·4·5=120), se debe imprimir:
             5!=120
 
@@ -219,7 +219,7 @@ void ejercicio_8(){
 
 /*
 
-    Escriba un programa que pida un numero N e imprima en pantalla el perımetro y el area de un
+    Un programa que pida un numero N e imprima en pantalla el perımetro y el area de un
     cırculo con radio N. Use 3.1416 como aproximacion del numero π.
         Por ejemplo, si se ingresa 1 se debe imprimir:
             Perimetro: 6.28352
@@ -248,7 +248,7 @@ void ejercicio_9(){
 /*
 
 
-    Escriba un programa que pida un numero N e imprima en pantalla todos los multiplos de dicho
+    Un programa que pida un numero N e imprima en pantalla todos los multiplos de dicho
     numero entre 1 y 100. Por ejemplo, si se ingresa 33 se debe imprimir:
         Multiplos de "33" menores que 100:
         33
@@ -274,3 +274,124 @@ void ejercicio_10(){
     }
     cout<<endl;
 }
+
+
+/*
+
+    Un programa que pida un numero N e imprima en pantalla su tabla de multiplicar hasta
+    10×N.
+
+*/
+
+
+void ejercicio_11(){
+    cout << "un programa que pide un numero N e imprime en pantalla su tabla de multiplicar hasta 10×N\n";
+
+    int n{};
+
+    cout << "Ingrese un numero natural: ";
+    cin >> n;
+
+    for (int i = 1; i <= 10; i++){
+        cout << i << "x" << n << " = " << (i*n) << "\n";
+    }
+
+    cout << endl;
+}
+
+/*
+
+    Un programa que pida un numero N e imprima todas las potencias desde N^1 hasta N^5.
+
+*/
+
+
+void ejercicio_12(){
+    cout << "un programa que pide un numero N e imprime todas las potencias desde N^1 hasta N^5\n";
+
+    int n{}, potencia{};
+
+    cout << "Ingrese un numero natural: ";
+    cin >> n;
+    potencia = n;
+
+    for (int i = 1; i <= 5; i++){
+        cout << n << "^" << i << "=" << potencia << "\n";
+        potencia*=n;
+    }
+    cout << endl;
+}
+
+/*
+
+    un programa que pida un numero N e imprima todos los divisores de N
+
+*/
+
+void ejercicio_13(){
+    cout << "Un programa que pide un numero N e imprime todos los divisores de \n";
+
+    int n{};
+
+    cout << "Ingrese un numero natual: ";
+    cin >> n;
+
+    cout << "Los divisores de " << n << " son: \n";
+    for (int i = 1; i <= n; i++){
+        if ((n%i)==0){
+            cout << i << "\n";
+        }
+    }
+
+    cout << endl;
+}
+
+/*
+
+    Un programa que imprima dos columnas paralelas, una con los numeros del 1 al 50 y otra
+    con los numeros del 50 al 1.
+
+*/
+
+void ejercicio_14(){
+    cout << "Un programa que imprima dos columnas paralelas, una con los numeros del 1 al 50 y otra con los numeros del 50 al 1.\n";
+
+    for (int sube = 1, baja = 50; sube <= 50; sube++, baja--){
+        cout << sube << " " << baja << "\n";
+    }
+
+    cout << endl;
+
+}
+
+/*
+
+    Un programa que pide al usuario que ingrese numeros. Una vez se ingrese el numero cero,
+    se debe imprimir en pantalla la suma de todos los numeros ingresados.
+
+*/
+void ejercicio_15(){
+    cout << "Un programa que pide al usuario que ingrese numeros. Una vez se ingrese el numero cero, se debe imprimir en pantalla la suma de todos los numeros ingresados.\n";
+
+    int input{}, sumatoria{};
+
+    do {
+        cout << "Ingrese un numero: ";
+        cin >> input;
+        sumatoria+=input;
+    } while(input!=0);
+
+    cout << "El resultado de la sumatoria es: " << sumatoria << endl;
+}
+
+
+
+
+void ejercicio_16(){}
+void ejercicio_17(){}
+void ejercicio_18(){}
+void ejercicio_19(){}
+void ejercicio_20(){}
+void ejercicio_21(){}
+void ejercicio_22(){}
+

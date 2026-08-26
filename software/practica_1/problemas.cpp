@@ -4,7 +4,7 @@ using std::cout, std::cin, std::endl;
 
 /*
 
-    Escriba un programa que identifique si un caracter ingresado es una vocal, una consonante o
+    Un programa que identifique si un caracter ingresado es una vocal, una consonante o
     ninguna de las dos e imprima un mensaje segun el caso.
         Por ejemplo
             si ingresa @, debe imprimir: @ no es una letra
@@ -37,7 +37,7 @@ void problema_1(){
 
 /*
 
-    Escriba un programa que determine la combinacion mınima de billetes y monedas para una cantidad
+    Un programa que determine la combinacion mınima de billetes y monedas para una cantidad
     dada. Los billetes disponibles son: $50.000, $20.000, $10.000, $5.000, $2.000, $1.000; las monedas:
     500, 200, 100, 50. Si no es posible distribuir la cantidad exacta entre las denominaciones disponibles,
     mostrar el faltante. Por ejemplo, para 47810:
@@ -56,6 +56,8 @@ void problema_1(){
 */
 
 void problema_2() {
+    cout << "Un programa que determina la combinacion mınima de billetes y monedas\npara una cantidad dada.\nLos billetes disponibles son:\n- $50.000 - $20.000 - $10.000 - $5.000 - $2.000 - $1.000 \nlas monedas:\n- 500 - 200 - 100 - 50.\n";
+
     int monto{};
 
     cout << "Digite el monto a retirar: ";
@@ -92,5 +94,77 @@ void problema_2() {
     cout << "50:    " << restante/50 << "\n";
     restante %= 50;
     cout << "Faltante: " << restante << endl;
+}
+
+/*
+
+    Un programa que reciba un mes y un dia e indique si la fecha es valida. Para 29/2, indicar:
+    “es valida en anos bisiestos”. La salida del programa debe ser la siguiente
+
+*/
+
+void problema_3(){
+
+    char input[7]{};
+
+
+
+    do{
+        cout << "Ingrese una fecha dd/mm (eje: 31/12): ";
+        cin >> input;
+
+        bool esEntradaValida{}, esMesValido{}, hayDia{}, esDiaValido{};
+
+
+        hayDia = !(input[1] != '/' && input[2] != '/');
+
+        esMesValido = (((input[0] != '1' && (input[0] >= '1' && input[0] <= '9')) && input[1] == 0) || (input[0] == '1' && (input[1] == '0' || input[1] == '1' || input[1] == '2' || input[1] == 0) && input[2] == 0));
+
+
+        if (!hayDia && !esMesValido) {
+            for (char c : input) cout << c; cout << " es un mes invalido" << endl;
+            continue;
+        } else if (!hayDia && esMesValido) {
+            cout << input[0] << input[1] << " es un mes valido" << endl;
+            continue;
+        }
+
+        int psSeparador{};
+
+        psSeparador = input[1] == '/' ? 1 : input[2] == '/' ? 2 : 0;
+
+        esMesValido = (((input[psSeparador+1] != '1' && (input[psSeparador+1] >= '1' && input[psSeparador+1] <= '9')) && input[psSeparador+2] == 0) || (input[psSeparador+1] == '1' && (input[psSeparador+2] == '0' || input[psSeparador+2] == '1' || input[psSeparador+2] == '2' || input[psSeparador+2] == 0) && input[psSeparador+3] == 0));
+
+        /*
+
+            Condiciones para verificar mes
+            - No hay dia ingresado
+            - si input[0] != 1 entoces
+                - input[1] == 0 hasta input[-1] == 0
+                - input[0] >= 1 && input[0] <= 9
+            - si input[0] == 1 entoces
+                - input[1] == 0 || input[1] == 1 || input[1] == 2
+
+
+
+            Condiciones para verificar fecha valida
+            - Hay dia ingresado (separador dia/mes)
+            - Es mes valido
+            - si psSeparador == 1
+                -
+                - input[0] >= 1 && input[o] <=9
+
+
+            NOTA: Se abandona metodo por verbosidad
+        */
+
+
+        // if (input[1] != '/' && input[2] != '/'){
+        //     cout << "Entrada invalida: "; for (char c : input) cout << c; cout << "\n";
+        //     continue;
+        // }
+
+    } while(input[0]!='0');
 
 }
+

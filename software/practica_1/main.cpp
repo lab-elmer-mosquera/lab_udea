@@ -1,7 +1,8 @@
-#include "ejercicios.h"
-// #include "problemas.h"
+// #include "ejercicios.h"
+#include "problemas.h"
 
 int main() {
-    ejercicio_10();
+    problema_3();
+    // ejercicio_15();
     return 0;
 }
