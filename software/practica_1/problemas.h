@@ -16,3 +16,25 @@ void problema_13();
 void problema_14();
 void problema_15();
 void problema_16();
+void problema_pendiente();
+
+
+const int TOTAL_PROBLEMAS = 16;
+inline void (*problemas[])() = {
+    problema_1,
+    problema_2,
+    problema_3,
+    problema_pendiente,
+    problema_pendiente,
+    problema_pendiente,
+    problema_pendiente,
+    problema_pendiente,
+    problema_pendiente,
+    problema_pendiente,
+    problema_pendiente,
+    problema_pendiente,
+    problema_pendiente,
+    problema_pendiente,
+    problema_pendiente,
+    problema_pendiente,
+};;

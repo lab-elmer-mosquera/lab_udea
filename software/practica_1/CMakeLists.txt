@@ -10,7 +10,6 @@ add_executable(practica_1 main.cpp
     ejercicios.cpp
     ejercicios.h
     problemas.h
-
 )
 
 include(GNUInstallDirs)

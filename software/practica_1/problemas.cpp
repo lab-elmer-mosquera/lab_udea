@@ -1,3 +1,4 @@
+#include "problemas.h"
 #include <iostream>
 
 using std::cout, std::cin, std::endl;
@@ -155,4 +156,11 @@ void problema_3(){
 
     cout << " es una fecha invalida" << endl;
 }
+
+
+void problema_pendiente(){
+    cout << "Este problema no ha sido desarrollado" << endl;
+}
+
+
 
