@@ -99,72 +99,60 @@ void problema_2() {
 /*
 
     Un programa que reciba un mes y un dia e indique si la fecha es valida. Para 29/2, indicar:
-    “es valida en anos bisiestos”. La salida del programa debe ser la siguiente
+    “es valida en anos bisiestos”.
 
 */
 
 void problema_3(){
+    cout << "Un programa que recibe un mes y un dia e indique si la fecha es valida. Para 29/2, indicar: \"es valida en anos bisiestos\"\n";
 
-    char input[7]{};
+    char input[6]{};
 
+    cout << "Ingrese una fecha dd/mm | mm (eje: 31/12 | 12): ";
+    cin >> input;
+    cout << input;
 
+    int fecha[2]{};
+    const int DiasValidos[12] = {31,28,31,30,31,30,31,31,30,31,30,31};
 
-    do{
-        cout << "Ingrese una fecha dd/mm (eje: 31/12): ";
-        cin >> input;
-
-        bool esEntradaValida{}, esMesValido{}, hayDia{}, esDiaValido{};
-
-
-        hayDia = !(input[1] != '/' && input[2] != '/');
-
-        esMesValido = (((input[0] != '1' && (input[0] >= '1' && input[0] <= '9')) && input[1] == 0) || (input[0] == '1' && (input[1] == '0' || input[1] == '1' || input[1] == '2' || input[1] == 0) && input[2] == 0));
+    bool isNum{}, separadorEncontrado{};
 
 
-        if (!hayDia && !esMesValido) {
-            for (char c : input) cout << c; cout << " es un mes invalido" << endl;
-            continue;
-        } else if (!hayDia && esMesValido) {
-            cout << input[0] << input[1] << " es un mes valido" << endl;
-            continue;
+    for (char c : input) {
+        isNum = (c >= '0' && c <= '9');
+
+        if (!isNum && c != 0){
+            if (c == '/' && !separadorEncontrado){
+                separadorEncontrado = true;
+                continue;
+            }
+            cout << " entrada invalida" << endl;
+            return;
         }
+        if (isNum && !separadorEncontrado)
+            fecha[0] = fecha[0] * 10 + (c - '0');
+        else if (isNum && separadorEncontrado)
+            fecha[1] = fecha[1] * 10 + (c - '0');
+    }
 
-        int psSeparador{};
-
-        psSeparador = input[1] == '/' ? 1 : input[2] == '/' ? 2 : 0;
-
-        esMesValido = (((input[psSeparador+1] != '1' && (input[psSeparador+1] >= '1' && input[psSeparador+1] <= '9')) && input[psSeparador+2] == 0) || (input[psSeparador+1] == '1' && (input[psSeparador+2] == '0' || input[psSeparador+2] == '1' || input[psSeparador+2] == '2' || input[psSeparador+2] == 0) && input[psSeparador+3] == 0));
-
-        /*
-
-            Condiciones para verificar mes
-            - No hay dia ingresado
-            - si input[0] != 1 entoces
-                - input[1] == 0 hasta input[-1] == 0
-                - input[0] >= 1 && input[0] <= 9
-            - si input[0] == 1 entoces
-                - input[1] == 0 || input[1] == 1 || input[1] == 2
-
-
-
-            Condiciones para verificar fecha valida
-            - Hay dia ingresado (separador dia/mes)
-            - Es mes valido
-            - si psSeparador == 1
-                -
-                - input[0] >= 1 && input[o] <=9
+    if (!separadorEncontrado) {
+        if (fecha[0] > 12 || fecha[0] == 0 )
+            cout << " es un mes invalido" << endl;
+        else
+            cout << " es un mes valido" << endl;
+        return;
+    } else if (separadorEncontrado && fecha[1] != 0 && fecha[1] <= 12 && fecha[0] != 0){
+        if (fecha[1] == 2 && fecha[0] == 29){
+            cout << " es valido en bisiesto" << endl;
+            return;
+        }
+        if (fecha[0] <= DiasValidos[fecha[1]-1]){
+            cout << " es una fecha valida" << endl;
+            return;
+        }
+    }
 
 
-            NOTA: Se abandona metodo por verbosidad
-        */
-
-
-        // if (input[1] != '/' && input[2] != '/'){
-        //     cout << "Entrada invalida: "; for (char c : input) cout << c; cout << "\n";
-        //     continue;
-        // }
-
-    } while(input[0]!='0');
-
+    cout << " es una fecha invalida" << endl;
 }
 
