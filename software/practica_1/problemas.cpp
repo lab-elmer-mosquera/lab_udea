@@ -231,6 +231,63 @@ void problema_4(){
     // cout << " Duracion Hora: " << hora[1] << " Duracion  Minuto: " << minuto[1] << endl;
     // cout << " Suma Hora: " << auxTiempo[0] << " Suma  Minuto: " << auxTiempo[1] << endl;
     cout << "La hora resultante es: " << auxTiempo[0] << ":" << auxTiempo[1] << endl;
+}
+
+
+/*
+    un programa que reciba un numero impar e imprima el patron mostrado a continuacion.
+    Si se ingresa 7 se debe imprimir
+        *
+        ***
+        *****
+        *******
+        ******
+        ***
+        *
+*/
+void problema_5(){
+
+    cout << "un programa que reciba un numero impar e imprima el patron mostrado a continuacion.\n";
+    cout << "Si se ingresa 7 se debe imprimir\n";
+    cout << "    *\n";
+    cout << "    ***\n";
+    cout << "    *****\n";
+    cout << "    *******\n";
+    cout << "    ******\n";
+    cout << "    ***\n";
+    cout << "    *" << endl;
+
+    int num{};
+
+    cout << "Ingrese un numero impar: ";
+    cin >> num;
+
+    if (!(num >= 1 && ((num%2)==1))){
+        cout << " entrada invalida";
+        return;
+    }
+
+    int auxNum{};
+
+    for (int i = 0; i <= num/2; i++){
+        auxNum = (num/num)+i*(2);
+        for (int j = 1; j <= auxNum; j++){
+            cout << "*";
+        }
+        cout << "\n";
+    }
+
+    auxNum = num-1;
+    for (int i = 0; i <= (num/2); i++){
+        if (i != 0)
+            auxNum /= 2;
+        for (int j = 1; j <= auxNum; j++){
+            cout << "*";
+        }
+        cout << "\n";
+        if (auxNum<1)
+            break;
+    }
 
 }
 
