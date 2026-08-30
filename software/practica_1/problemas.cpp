@@ -109,7 +109,7 @@ void problema_3(){
 
     char input[6]{};
 
-    cout << "Ingrese una fecha dd/mm | mm (eje: 31/12 | 12): ";
+    cout << "Ingrese un mes y un dia o solo un mes (eje: 31/12 o 12): ";
     cin >> input;
     cout << input;
 
@@ -156,7 +156,6 @@ void problema_3(){
 
     cout << " es una fecha invalida" << endl;
 }
-
 
 void problema_pendiente(){
     cout << "Este problema no ha sido desarrollado" << endl;
