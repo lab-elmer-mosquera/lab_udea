@@ -157,6 +157,83 @@ void problema_3(){
     cout << " es una fecha invalida" << endl;
 }
 
+/*
+    un programa que sume dos tiempos en formato HHMM, donde el primer entero representa
+    una hora (p.ej., 1245 = 12:45) y el segundo entero representa una duracion (2570 = 25 horas y 70
+    minutos)
+*/
+void problema_4(){
+    cout << "un programa que sume dos tiempos en formato HHMM, donde el primer entero representa una hora (p.ej., 1245 = 12:45) y el segundo entero representa una duracion (2570 = 25 horas y 70 minutos)\n";
+
+    char input[4]{};
+
+    cout << "Ingrese una hora en formato HHMM (ej. 1402 o 0212): ";
+    cin >> input;
+
+    int hora[3]{}, minuto[3]{}, nCaracteres[2]{};
+    bool entradaInvalida{};
+
+    for (char c : input){
+        if (c >= '0' && c <= '9' && nCaracteres[0] < 2){
+            hora[0] = hora[0] * 10 + (c-'0');
+            nCaracteres[0]++;
+            continue;
+        }
+        if (c >= '0' && c <= '9' && nCaracteres[1] < 2){
+            minuto[0] = minuto[0] * 10 + (c-'0');
+            nCaracteres[1]++;
+            continue;
+        }
+        entradaInvalida = true;
+    }
+
+    if (entradaInvalida || !(hora[0] >= 0 && hora[0] <= 23) || !(minuto[0] >= 0 && minuto[0] <= 59)){
+        cout << input << " es un tiempo invalido" << endl;
+        return;
+    }
+
+    nCaracteres[0] = 0;
+    nCaracteres[1] = 0;
+    entradaInvalida = false;
+    input[0] = 0;
+
+    cout << "Ingrese una duracion en formato HHMM (ej. 2615 o 0280): ";
+    cin >> input;
+
+    for (char c : input){
+        if (c >= '0' && c <= '9' && nCaracteres[0] < 2){
+            hora[1] = hora[1] * 10 + (c-'0');
+            nCaracteres[0]++;
+            continue;
+        }
+        if (c >= '0' && c <= '9' && nCaracteres[1] < 2){
+            minuto[1] = minuto[1] * 10 + (c-'0');
+            nCaracteres[1]++;
+            continue;
+        }
+        entradaInvalida = true;
+    }
+
+    if (entradaInvalida) {
+        cout << " entrada invalida";
+    }
+
+    int auxTiempo[2]{};
+
+    auxTiempo[0] = hora[0] + hora[1];
+    auxTiempo[1] = minuto[0] + minuto[1];
+
+    auxTiempo[0] = (auxTiempo[0]%24) + (auxTiempo[1]/60);
+    auxTiempo[1] %= 60;
+
+
+    // cout << " Hora: " << hora[0] << " Minuto: " << minuto[0] << endl;
+    // cout << " Duracion Hora: " << hora[1] << " Duracion  Minuto: " << minuto[1] << endl;
+    // cout << " Suma Hora: " << auxTiempo[0] << " Suma  Minuto: " << auxTiempo[1] << endl;
+    cout << "La hora resultante es: " << auxTiempo[0] << ":" << auxTiempo[1] << endl;
+
+}
+
 void problema_pendiente(){
     cout << "Este problema no ha sido desarrollado" << endl;
 }

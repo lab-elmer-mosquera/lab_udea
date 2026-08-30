@@ -24,7 +24,7 @@ inline void (*problemas[])() = {
     problema_1,
     problema_2,
     problema_3,
-    problema_pendiente,
+    problema_4,
     problema_pendiente,
     problema_pendiente,
     problema_pendiente,
