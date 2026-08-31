@@ -22,7 +22,7 @@ void problema_1(){
     cout << "Digire una caracter: ";
     cin >> input;
 
-    esLetra = ((int)input >= (int)'A' && (int)input <= (int)'Z') || ((int)input >= (int)'a' && (int)input <= (int)'z');
+    esLetra = (input >= 'A' && input <= 'Z') || (input >= 'a' && input <= 'z');
 
     if (esLetra) {
         esVocal = (input == 'A' || input == 'a') || (input == 'E' || input == 'e') || (input == 'I' || input == 'i') || (input == 'O' || input == 'o') || (input == 'U' || input == 'U');
@@ -289,6 +289,156 @@ void problema_5(){
             break;
     }
 
+}
+
+/*
+
+    Un programa que aproxima el número e según la serie infinita:
+
+    e = 1/0! + 1/1! + 1/2! + 1/3! + ...
+
+    El usuario debe ingresar el número de términos.
+
+    Para 3 términos el programa debe imprimir:
+    e es aproximadamente: 2.5
+*/
+void problema_6(){
+    cout << "Un programa que aproxima el número e según la serie infinita:\ne = 1/0! + 1/1! + 1/2! + 1/3! + ...\n";
+
+    float n{}, euler = 1;
+
+    cout << "Ingrese el numero de terminos que desea ver\n>";
+    cin >> n;
+
+    if (n<=0){
+        cout << "entrada invalida";
+        return;
+    }
+
+    for (int i = 1, auxFactorial = 1; i < n; i++, auxFactorial *= i){
+        euler += 1/(float)auxFactorial;
+    }
+    cout << "e es aproximadamente: " << euler << endl;
+}
+
+/*
+    Un programa que pida al usuario que ingrese un número N. Sume los pares de la serie de Fibonacci menores a N e imprima el resultado en consola.
+
+    Por ejemplo, si ingresa 10, debe imprimir:
+    El resultado de la suma es: 10
+
+*/
+void problema_7(){
+    cout << "Un programa que pide al usuario que ingrese un número N. Sume los pares de la serie de Fibonacci menores a N e imprime el resultado en consola.\n";
+
+    int n{}, suma{};
+
+    cout << "Digite un numero natural\n>";
+    cin >> n;
+
+    if (n < 0){
+        cout << "entrada invalida" << endl;
+        return;
+    }
+
+    cout << "Serie fibonachi: ";
+    for (int auxFibo{}, auxFiAn = 1, fibonacci{}; fibonacci <= n; fibonacci = (auxFibo+auxFiAn), auxFibo=auxFiAn, auxFiAn=fibonacci){
+        if ((fibonacci%2)==0)
+            suma+=fibonacci;
+    }
+
+    cout << "\nEl resultado de la suma es: " << suma << endl;
+}
+
+/*
+
+    Un programa que solicite al usuario tres números a, b y c. Después de esto, sume todos los múltiplos de a (ma1, ma2 ... , man) y b (mb1, mb2 ... , mbn) menores que c, sin duplicar aquellos que sean comunes entre ambos.
+
+    Por ejemplo, para los valores a = 6, b = 12, c = 30, debe imprimir:
+    6+12+18+24 = 60
+
+
+*/
+void problema_8(){
+    cout << "Un programa que solicite al usuario tres números a, b y c. Después de esto, sume todos los múltiplos de a (ma1, ma2 ... , man) y b (mb1, mb2 ... , mbn) menores que c, sin duplicar aquellos que sean comunes entre ambos\n";
+
+    int input[3]{}, sumatoria{}, mayor{}, menor{};
+
+    for (int i = 0; i < 3; i++) {
+        cout << "Digite el " << i << " numero: ";
+        cin>> input[i];
+    }
+
+    if (input[2] < input[1] && input[2] < input[0]) {
+        cout << "entrada invalida";
+        return;
+    }
+
+    mayor = input[0] > input[1] ? input[0] : input[1];
+    menor = mayor == input[0] ? input[1] : input[0];
+
+    for (int i = menor; i < input[2]; i++){
+        if ((i%menor)==0 && (i%mayor)==0){
+            sumatoria+=i;
+            if (menor==mayor && menor!=i)
+                cout << "+";
+            cout << i;
+            continue;
+        }
+        if ((i%menor)==0 && (i%mayor)!=0){
+            sumatoria+=i;
+            if (i!=menor){
+                cout << "+";
+            }
+            cout << i;
+            continue;
+        }
+        if ((i%menor)!=0 && (i%mayor)==0){
+            sumatoria+=i;
+            cout << "+" << i;
+            continue;
+        }
+    }
+
+    cout << " = " << sumatoria << endl;
+
+}
+
+/*
+
+    Un programa que reciba un número N y luego sume los dígitos de N elevados a sí mismos e imprima el resultado en pantalla.
+
+    Por ejemplo, para el número 1223 (1^1 + 2^2 + 2^2 + 3^3 = 36), debe imprimir:
+    El resultado de la suma es: 36
+
+
+*/
+void problema_9(){
+    problema_pendiente();
+}
+void problema_10(){
+    problema_pendiente();
+}
+void problema_11(){
+    problema_pendiente();
+}
+void problema_12(){
+    problema_pendiente();
+}
+void problema_13(){
+    problema_pendiente();
+}
+void problema_14(){
+    problema_pendiente();
+}
+void problema_15(){
+    problema_pendiente();
+}
+void problema_16(){
+    problema_pendiente();
+}
+void problema_17(){
+    problema_pendiente();
 }
 
 void problema_pendiente(){
