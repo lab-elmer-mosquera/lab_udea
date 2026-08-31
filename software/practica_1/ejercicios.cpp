@@ -384,14 +384,79 @@ void ejercicio_15(){
     cout << "El resultado de la sumatoria es: " << sumatoria << endl;
 }
 
+/*
+
+    Un programa que pida al usuario que ingrese numeros. Una vez se ingrese el numero cero,
+    se debe imprimir en pantalla el promedio de los numeros ingresados (sin incluir el cero).
+
+ */
 void ejercicio_16(){
-    ejercicio_pendiente(16);
+    cout << "un programa que pida al usuario que ingrese numeros. Una vez se ingrese el numero cero, se debe imprimir en pantalla el promedio de los numeros ingresados (sin incluir el cero).\n";
+
+    int n{}, promedio{}, auxCount{};
+
+    do {
+        cout << "Ingrese un numero: ";
+        cin >> n;
+
+        promedio += n;
+        if (n == 0) break;
+        auxCount++;
+
+    } while (true);
+
+    promedio /= auxCount;
+
+    cout << "El promedio es: " << promedio << endl;
+
 }
+
+/*
+
+    un programa que pida al usuario que ingrese numeros. Una vez se ingrese el numero cero,
+    se debe imprimir en pantalla el mayor de todos los numeros ingresados.
+
+*/
 void ejercicio_17(){
-        ejercicio_pendiente(17);
+    cout << "un programa que pida al usuario que ingrese numeros. Una vez se ingrese el numero cero, se debe imprimir en pantalla el mayor de todos los numeros ingresados.\n";
+
+    int n{}, mayor{};
+
+    do {
+        cout << "Ingrese un numero: ";
+        cin >> n;
+
+        if (n == 0) break;
+        mayor = n > mayor ? n : mayor;
+
+    } while (true);
+
+    cout << "El numero mayor fue: " << mayor << endl;
 }
+
+/*
+
+    Un programa que pida un numero N e imprima si es o no un cuadrado perfecto
+
+*/
 void ejercicio_18(){
-        ejercicio_pendiente(18);
+    cout << "Un programa que pida un numero N e imprima si es o no un cuadrado perfecto\n";
+
+    int n{};
+    cout << "Digite un numero natural: ";
+    cin >> n;
+
+    for (int i = 1, auxImpar = 1, auxCuadrado = 1; i <= n/2; i++, auxImpar+=2, auxCuadrado+=auxImpar){
+        if (auxCuadrado == n && (i*i)== n){
+            cout << n << " es un cuadrado perfecto" << endl;
+            return;
+        }
+        if ((i*i)>n) {
+            break;
+        }
+    }
+
+    cout << n << " NO es un cuadrado perfecto" << endl;
 }
 void ejercicio_19(){
         ejercicio_pendiente(19);
