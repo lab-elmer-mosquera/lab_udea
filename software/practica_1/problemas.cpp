@@ -444,8 +444,46 @@ void problema_9(){
     }
     cout << "El resultado de la suma es: " << suma << endl;
 }
+
+/*
+
+    Escriba un programa que reciba un número N e imprima el enésimo número primo.
+
+    Por ejemplo, si el usuario ingresa 4, se debe imprimir:
+    El primo número 4 es: 7
+
+
+*/
 void problema_10(){
-    problema_pendiente();
+    cout << "Un programa que recibe un número N e imprime el enésimo número primo\n";
+    int n{}, nPrimo{};
+
+    cout << "Ingrese un numero natural: ";
+    cin >> n;
+
+    if (n<1){
+        cout << "entrada invalida";
+        return;
+    }
+
+    bool noEsPrimo{};
+
+    for (int it = 1, count = 0; count <= n; it++) {
+        noEsPrimo = false;
+        for (int i = 1; i < it; i++) {
+            if (it%i==0 && i!=it && i>1){
+                noEsPrimo=true;
+                break;
+            }
+        }
+        if (!noEsPrimo){
+            nPrimo = it;
+            count++;
+        }
+    }
+
+    cout << "El primo número " << n << " es: " << nPrimo << endl;
+
 }
 void problema_11(){
     problema_pendiente();

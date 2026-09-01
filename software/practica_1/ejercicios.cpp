@@ -458,9 +458,35 @@ void ejercicio_18(){
 
     cout << n << " NO es un cuadrado perfecto" << endl;
 }
+
+/*
+
+    Escriba un programa que pida un número N e imprima si es o no un número primo.
+
+    Por ejemplo, si se ingresa 7 se debe imprimir:
+    7 es un número primo.
+
+    Y si se ingresa 8 se debe imprimir:
+    8 NO es un número primo.
+
+*/
 void ejercicio_19(){
-        ejercicio_pendiente(19);
+    cout << "Un programa que pide un número N e imprima si es o no un número primo\n";
+
+    int n{};
+
+    cout << "Ingrese un numero natural: ";
+    cin >> n;
+
+    for (int i = 1; i < n; i++) {
+        if (n%i==0 && i!=n && i>1){
+            cout << n << " NO es un número primo" << endl;
+            return;
+        }
+    }
+    cout << n << " es un número primo" << endl;
 }
+
 void ejercicio_20(){
         ejercicio_pendiente(20);
 }
