@@ -414,7 +414,35 @@ void problema_8(){
 
 */
 void problema_9(){
-    problema_pendiente();
+
+    cout << "Un programa que recibe un número N y luego suma los dígitos de N elevados a sí mismos e imprima el resultado en pantalla.\n";
+
+    char input[10]{};
+
+    cout << "Digite un numero: ";
+    cin >> input;
+
+    for (char c : input){
+        if (c == 0)
+            break;
+        if (c >= '0' && c <= '9')
+            continue;
+        cout << input << "entrada invalida";
+        return;
+    }
+
+    int suma{}, auxPotencia{};
+
+    for (char c : input){
+        if (c == 0)
+            break;
+        auxPotencia = c-'0';
+        for (int i=1, d = c-'0'; i < d; i++){
+            auxPotencia*=d;
+        }
+        suma+=auxPotencia;
+    }
+    cout << "El resultado de la suma es: " << suma << endl;
 }
 void problema_10(){
     problema_pendiente();
