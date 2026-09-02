@@ -494,7 +494,7 @@ void problema_10(){
 
 */
 void problema_11(){
-    cout << "Un programa que reciba un número N y calcule el MCM de los números enteros entre 1 y N\n";
+    cout << "Un programa que recibe un número N y calcula el MCM de los números enteros entre 1 y N\n";
 
     int n{}, mnm{};
 
@@ -525,14 +525,94 @@ void problema_11(){
         }
     }
     cout << "El mínimo comun multiplo es: " << mnm << endl;
+}
 
-}
+/*
+
+    Un programa que reciba un número N y calcule el mayor factor primo de N.
+
+    Para N = 33 el programa debe imprimir:
+    El mayor factor primo de 33 es: 11
+
+*/
 void problema_12(){
-    problema_pendiente();
+    cout << "Un programa que recibe un número N y calcula el mayor factor primo de N.\n";
+
+    int n{};
+    bool noEsPrimo{};
+
+    cout << "Ingrese un numero natural: ";
+    cin >> n;
+
+    if (n<=0){
+        cout << "Entrada invalida" << endl;
+        return;
+    }
+
+    if (n == 1){
+        cout << "El mayor factor primo de 1 es 1" << endl;
+    }
+
+
+    for (int i = n; i >= 1; i--, noEsPrimo = false) {
+        if (!(n%i==0)){
+            continue;
+        }
+        for (int j = 1; j < i; j++) {
+            if (i%j==0 && j>1){
+                noEsPrimo=true;
+                break;
+            }
+        }
+        if (!noEsPrimo){
+            cout << "El mayor factor primo de " << n << " es " << i;
+            if (i==n) cout << " (prop. de n. primos)";
+            cout << endl;
+            return;
+        }
+    }
+
+    cout << "Error desconocido" << endl;
 }
+
+/*
+
+    Un programa que reciba un número N y sume todos los primos menores que N.
+
+    Por ejemplo, para N = 10 el programa debe imprimir:
+    El resultado de la suma es: 17
+
+*/
 void problema_13(){
-    problema_pendiente();
+    cout << "Un programa que recibe un número N y suma todos los primos menores que N\n" << endl;
+
+    int n{}, sum{};
+
+    cout << "Ingrese un numero natural: ";
+    cin >> n;
+
+    if (n<=0){
+        cout << "entrada invalida" << endl;
+        return;
+    }
+
+    bool noEsPrimo{};
+
+    for (int it = n; it != 1; it--, noEsPrimo = false) {
+        for (int i = 1; i < it; i++) {
+            if (it%i==0 && i>1){
+                noEsPrimo=true;
+                break;
+            }
+        }
+        if (!noEsPrimo){
+            sum += it;
+        }
+    }
+    if (n==1) sum = 1;
+    cout << "El resultado de la suma es: " << sum << endl;
 }
+
 void problema_14(){
     problema_pendiente();
 }
