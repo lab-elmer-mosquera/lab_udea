@@ -803,8 +803,61 @@ void ejercicio_28(){
 
     cout << "pi es aproximadamente: " << aproPi << endl;
 }
+
+/*
+
+    Un programa que adivine un número A (entre 0 y 100) seleccionado por el usuario (el número NO se ingresa al programa). El programa imprimirá en pantalla un número B y el usuario usará los símbolos >, < e = para indicarle al programa si B es mayor, menor o igual que A, respectivamente. El proceso se repite hasta acertar.
+
+*/
 void ejercicio_29(){
-        ejercicio_pendiente(29);
+    cout << "Un programa que adivine un número A (entre 0 y 100) seleccionado por el usuario (el número NO se ingresa al programa). El programa imprimirá en pantalla un número B y el usuario usará los símbolos >, < e = para indicarle al programa si B es mayor, menor o igual que A, respectivamente. El proceso se repite hasta acertar.\n\n";
+
+    char c{};
+    float auxInput{};
+
+    cout << "Piensa en un numero entre 0 y 100\nDigita 1 cuando lo tengas: ";
+    cin >> auxInput;
+
+    if (auxInput != 1){
+        cout << "Entrada invalida" << endl;
+        return;
+    }
+
+
+    for (float limS = 100+1, limI = 0, calculado{}, sugerido = 50; true; c = 0) {
+
+        cout << "El numero es " << (int)sugerido << "?\n";
+
+        cout << "Si acerte digita \"=\"\nsi es mayor ingresa \">\"\n si es menor ingresa \"<\"\n> ";
+        cin >> c;
+
+        if (c!='<' && c!='>' && c!='='){
+            cout << "entrada ivalida" << endl;
+            continue;
+        }
+
+        if (c=='>')
+            limI = sugerido;
+        if (c=='<')
+            limS = sugerido;
+        if (c == '=')
+            break;
+
+
+        calculado = (limS - limI)/2;
+        sugerido = limS - calculado;
+
+
+    }
+
+    if (c=='='){
+        cout << "ACERTE!, GRACIAS POR JUGAR\nHASTA LUEGO!" << endl;
+        return;
+    }
+
+
+    cout << "error desconocido" << endl;
+
 }
 void ejercicio_30(){
         ejercicio_pendiente(30);
