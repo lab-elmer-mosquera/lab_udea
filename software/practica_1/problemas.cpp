@@ -447,7 +447,7 @@ void problema_9(){
 
 /*
 
-    Escriba un programa que reciba un número N e imprima el enésimo número primo.
+    Un programa que reciba un número N e imprima el enésimo número primo.
 
     Por ejemplo, si el usuario ingresa 4, se debe imprimir:
     El primo número 4 es: 7
@@ -483,10 +483,49 @@ void problema_10(){
     }
 
     cout << "El primo número " << n << " es: " << nPrimo << endl;
-
 }
+
+/*
+
+    Un programa que reciba un número N y calcule el MCM de los números enteros entre 1 y N.
+
+    Por ejemplo, para N = 4, el programa debe imprimir:
+    El mínimo comun múltiplo es: 12
+
+*/
 void problema_11(){
-    problema_pendiente();
+    cout << "Un programa que reciba un número N y calcule el MCM de los números enteros entre 1 y N\n";
+
+    int n{}, mnm{};
+
+    cout << "Digite un numero natural: ";
+    cin >> n;
+
+    if (n <= 0){
+        cout << "entrada invalida" << endl;
+        return;
+    }
+    if (n==1){
+        cout << "El minimo comun multiplo entre 1 y 1 es 1";
+    }
+
+    bool noEsMCM = false;
+
+    for (int i = 1, auxMul{}; mnm == 0; i++, noEsMCM = false) {
+        auxMul = n * i;
+        for (int j = n; j >= 1; j--) {
+            if ((auxMul%j)!=0){
+                noEsMCM = true;
+                // cout << "No es: " << auxMul << "\n";
+                break;
+            }
+        }
+        if (!noEsMCM) {
+            mnm = auxMul;
+        }
+    }
+    cout << "El mínimo comun multiplo es: " << mnm << endl;
+
 }
 void problema_12(){
     problema_pendiente();
