@@ -1,4 +1,4 @@
-#include "problemas.h"
+﻿#include "problemas.h"
 #include <iostream>
 
 using std::cout, std::cin, std::endl;
@@ -613,8 +613,66 @@ void problema_13(){
     cout << "El resultado de la suma es: " << sum << endl;
 }
 
+/*
+
+    Un programa que encuentra e imprime el número palíndromo más grande producto de dos números de 3 dígitos
+
+*/
 void problema_14(){
-    problema_pendiente();
+    cout << "Un programa que encuentra e imprime el número palíndromo más grande producto de dos números de 3 dígitos\n";
+
+    int n1{}, n2{}, palindromo{}, multiplos[2];
+
+    bool esPalindromo{};
+
+    cout << "Ingrese un numero de 3 digitos: ";
+    cin >> n1;
+
+    cout << "Ingrese un numero 3 digitos distinto de " << n1 << ": ";
+    cin >> n2;
+
+    // Validación: ambos deben estar entre 0 y 999
+    if (n1 < 100 || n1 > 999 || n2 < 100 || n2 > 999 || n1 == n2) {
+        cout << "Entrada invalida" << endl;
+        return;
+    }
+
+    if (n1 > n2) {
+        int aux = n1;
+        n1 = n2;
+        n2 = aux;
+    }
+
+    for (int i = n2; i >= n1; --i) {
+
+        for (int j = i; j >= n1; --j) {
+
+            int auxPalindromo = i * j;
+
+            if (auxPalindromo <= palindromo) {
+                break;
+            }
+
+            int auxInverso = 0;
+            int auxConvercion = auxPalindromo;
+
+            // Invertir el número
+            while (auxConvercion > 0) {
+                int auxDigito = auxConvercion % 10;
+                auxConvercion /= 10;
+                auxInverso = (auxInverso * 10) + auxDigito;
+            }
+
+            if (auxInverso == auxPalindromo) {
+                palindromo = auxPalindromo;
+                multiplos[0] = i;
+                multiplos[1] = j;
+            }
+        }
+    }
+
+    cout << "Palindromo maximo encontrado: " << palindromo << " (" << multiplos[0] << " x " << multiplos[1] << ")\n";
+
 }
 void problema_15(){
     problema_pendiente();
