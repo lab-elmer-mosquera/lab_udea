@@ -87,3 +87,6 @@ CMakeLists.txt.user*
 # Entorno agil de modificaciones
 ./zed
 compile_commands.json
+
+# Entorno de terminal
+out/
