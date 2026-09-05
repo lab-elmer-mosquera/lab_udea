@@ -474,6 +474,13 @@ Escriba un programa que encuentre e imprima el número palíndromo más grande p
 Escriba un programa que reciba un número N impar y genere una matriz que sigue una espiral (como se muestra en el diagrama original). Después de generada la matriz, sume las diagonales e imprima el resultado.
 
 Por ejemplo, para N = 5 se debe imprimir:
+
+	21   22       23     24   25
+	20    7        8      9   10
+	19    6        1      2   11
+	18    5        4      3   12
+	17   16       15     14   13 
+
 El resultado de la suma de las diagonales es: 101
 ```
 
