@@ -779,8 +779,55 @@ void problema_15() {
     cout << "El resultado de la suma de las diagonales es: " << sum << endl;
 }
 
+
+
+/*
+
+    Un programa que recibe un valor j y calcula las series de Collatz para todas las semillas N < j.
+    Encuentra la semilla que genera la serie de Collatz más larga y cuántos términos m tiene. Imprima
+    dicha serie de Collatz, la semilla y la cantidad de términos
+
+*/
 void problema_16(){
-    problema_pendiente();
+    cout << "Un programa que recibe un valor j y calcula las series de Collatz para todas las semillas N < j.\n"
+    "Encuentra la semilla que genera la serie de Collatz más larga y cuántos términos m tiene. Imprima\n"
+    "dicha serie de Collatz, la semilla y la cantidad de términos\n";
+
+    int j{}, semCollatz{}, cantCollatz{};
+
+    cout << "Digite un numero: ";
+    cin >> j;
+
+    for (int n = 1, auxCantCollatz{}; n <= j; n++, auxCantCollatz = 0){
+        for (int div = n; div != 1; auxCantCollatz++) {
+            if (div%2==0){
+                div=div/2;
+            } else {
+                div = (3*div)+1;
+            }
+        }
+        if (auxCantCollatz>cantCollatz){
+            cantCollatz = auxCantCollatz;
+            semCollatz = n;
+        }
+    }
+
+    cout << "C0" << " = " << semCollatz << "\n";
+    for (int div = semCollatz, it = 1; div != 1;it++) {
+        cout << "C" << it  << " = " ;
+        if (div%2==0){
+            cout << div << "/2";
+            div=div/2;
+        } else {
+            cout << "3*"<< div << " + 1";
+            div = (3*div)+1;
+        }
+        cout << "\n";
+    }
+
+    cout << "\nLa semilla que produce la serie\nde collatz mas laga "
+            "entre 1 y " << j << "\n  Es:  " << semCollatz
+         << "\n  Con:  " << cantCollatz  << " terminos" << endl;
 }
 void problema_17(){
     problema_pendiente();
@@ -789,6 +836,3 @@ void problema_17(){
 void problema_pendiente(){
     cout << "Este problema no ha sido desarrollado" << endl;
 }
-
-
-
