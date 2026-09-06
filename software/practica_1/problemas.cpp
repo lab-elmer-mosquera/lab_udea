@@ -753,7 +753,6 @@ void problema_15() {
 
         sum += matriz[fila][columna];
 
-
         for (int arr = 1; arr <= pasos; arr++) {
             ++numero;
             fila -= 1;
@@ -829,10 +828,38 @@ void problema_16(){
             "entre 1 y " << j << "\n  Es:  " << semCollatz
          << "\n  Con:  " << cantCollatz  << " terminos" << endl;
 }
-void problema_17(){
-    problema_pendiente();
-}
 
-void problema_pendiente(){
-    cout << "Este problema no ha sido desarrollado" << endl;
+/*
+
+    Un programa que pide un número k y encuentra e imprima el primer número triangular con al
+    menos k divisores. El enésimo número triangular es n(n + 1)/2.
+
+    Por ejemplo para k = 6 el programa debe imprimir:
+    El número es: 28, que tiene 6 divisores.
+
+*/
+void problema_17(){
+    cout << "Un programa que pide un número k y encuentra e imprima el primer número triangular con al\n"
+            "menos k divisores. El enésimo número triangular es n(n + 1)/2.n";
+
+    int k{}, nTriagula{};
+    cout << "Digite un numero natural: ";
+    cin >> k;
+
+    if (k<=0){
+        cout << "entrada invalida" << endl;
+        return;
+    }
+
+    for (int auxNuTriangular{}, it = 1, auxDiv{}; true; it++, auxNuTriangular = (it*(it+1))/2, auxDiv = 0) {
+        for (int i = auxNuTriangular; i >= 1; i--) {
+            if (auxNuTriangular%i==0)
+                auxDiv++;
+        }
+        if (auxDiv == k){
+            nTriagula = auxNuTriangular;
+            break;
+        }
+    }
+    cout << "El número es: "<<nTriagula<<", que tiene " << k << " divisores." << endl;
 }

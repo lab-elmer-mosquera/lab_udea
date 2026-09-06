@@ -33,8 +33,6 @@ void ejercicio_28();
 void ejercicio_29();
 void ejercicio_30();
 
-void ejercicio_pendiente(int);
-
 inline void (*ejercicios[TOTAL_EJERCICIOS])() = {
     ejercicio_1,
     ejercicio_2,

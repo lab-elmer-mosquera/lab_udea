@@ -1,5 +1,7 @@
 #include "ejercicios.h"
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using std::cin;
 using std::cout;
@@ -847,7 +849,6 @@ void ejercicio_29(){
         calculado = (limS - limI)/2;
         sugerido = limS - calculado;
 
-
     }
 
     if (c=='='){
@@ -855,14 +856,38 @@ void ejercicio_29(){
         return;
     }
 
-
     cout << "error desconocido" << endl;
-
 }
+
+/*
+
+    Un programa que genera un número aleatorio A (entre 0 y 100) y pide al usuario que lo adivine; el
+    programa le dirá si B es mayor o menor que A hasta que acierte, y luego mostrará el número de
+    intentos.
+
+*/
 void ejercicio_30(){
-        ejercicio_pendiente(30);
-}
+    cout << "Un programa que genera un número aleatorio A (entre 0 y 100) par que el lo adivines. el\n"
+            "programa dirá si B es mayor o menor que A hasta que acierte, y luego mostrará el número de intentos.\n";
 
-void ejercicio_pendiente(int n) {
-    cout << "El ejercicio " << n << " no ha sido desarrollado";
+    std::srand(std::time(0));
+
+    int nSecreto = rand()%101;
+
+    for (int intentos = 1, input{}; input != nSecreto; intentos++) {
+        cout << "Intenta acertar al numero: ";
+        cin >> input;
+
+        if (input < 0 && input > 100){
+            cout << "valor fuera de rango" << endl;
+            continue;
+        }
+
+        if (input>nSecreto)
+            cout << "El numero secreto es menor\n";
+        else if (input<nSecreto)
+            cout << "El numero secreto es mayor\n";
+        else
+            cout << "ACERTASTE. EN EL INTENTO #" << intentos;
+    }
 }

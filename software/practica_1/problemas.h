@@ -17,7 +17,6 @@ void problema_14();
 void problema_15();
 void problema_16();
 void problema_17();
-void problema_pendiente();
 
 
 const int TOTAL_PROBLEMAS = 17;
