@@ -17,9 +17,11 @@ void problema_14();
 void problema_15();
 void problema_16();
 void problema_17();
+void problema_18();
+void problema_pendiente();
 
 
-const int TOTAL_PROBLEMAS = 17;
+const int TOTAL_PROBLEMAS = 18;
 inline void (*problemas[TOTAL_PROBLEMAS])() = {
     problema_1,
     problema_2,
@@ -38,4 +40,5 @@ inline void (*problemas[TOTAL_PROBLEMAS])() = {
     problema_15,
     problema_16,
     problema_17,
+    problema_18,
 };
