@@ -1,4 +1,4 @@
-#include "cadena.h"
+﻿#include "cadena.h"
 #include <iostream>
 
 using std::cout, std::endl;
@@ -25,15 +25,42 @@ bool StringsAreEquals(char *string1, char *string2){
     @param Referencia (char *) a en la que se almacena la conversion
 
 */
-void intToChar(int num, char *string){
-    int cpNum = num;
-    char cadena[10];
+void IntToChar(int num, char *string){
+    int i = 0, j = 0;
+    char temp[12];
+    bool esNegativo = false;
 
-    // TODO
+    // Manejar caso especial de 0
+    if(num == 0){
+        string[0] = '0';
+        string[1] = '\0';
+        return;
+    }
 
-    // obtener numero invertido
-    // convertir invertido en char mediante
+    // Verificar si es negativo
+    if(num < 0){
+        esNegativo = true;
+        num = -num;
+    }
 
+    // Extraer digitos uno por uno
+    while(num > 0){
+        temp[i++] = (num % 10) + '0';
+        num /= 10;
+    }
+
+    // Agregar signo negativo si corresponde
+    if(esNegativo){
+        string[j++] = '-';
+    }
+
+    // Copiar digitos en orden inverso
+    for(int k = i - 1; k >= 0; k--){
+        string[j++] = temp[k];
+    }
+
+    // Terminar la cadena
+    string[j] = '\0';
 }
 
 

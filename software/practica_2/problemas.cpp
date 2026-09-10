@@ -95,13 +95,13 @@ void problema_5(){
             "\ncadena de caracteres. Usando parámetros por referencia para retornar la cadena.\n";
 
     int n{};
-    char string[100];
+    char string[12];
 
     cout << "Ingrese el numero entero a convertir\n";
     Input_Int_Range(-2147483647, 2147483647, n);
 
-    // Funcion
-    intToChar(n, string);
+    // Funcion de conversion
+    IntToChar(n, string);
 
     cout << string << endl;
 
