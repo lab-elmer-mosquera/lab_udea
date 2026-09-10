@@ -840,7 +840,7 @@ void problema_16(){
 */
 void problema_17(){
     cout << "Un programa que pide un número k y encuentra e imprima el primer número triangular con al\n"
-            "menos k divisores. El enésimo número triangular es n(n + 1)/2.n";
+            "menos k divisores. El enésimo número triangular es n(n + 1)/2.\n";
 
     int k{}, nTriagula{};
     cout << "Digite un numero natural: ";
@@ -861,5 +861,5 @@ void problema_17(){
             break;
         }
     }
-    cout << "El número es: "<<nTriagula<<", que tiene " << k << " divisores." << endl;
+    cout << "El número es: "<< nTriagula <<", que tiene " << k << " divisores." << endl;
 }
