@@ -146,11 +146,41 @@ void problema_8(){
 
 /*
 
-
+    un programa que reciba un número n y una cadena de caracteres numéricos; el programa debe separar
+    la cadena de caracteres en grupos de n cifras, sumarlos e imprimir el resultado. En caso de no poder
+    dividirse exactamente en grupos de n cifras, se debe rellenar con ceros a la izquierda del primer número.
 
 */
 void problema_9(){
-    problema_pendiente();
+    cout << "un programa que recibe un número n y una cadena de caracteres numéricos; separa\n"
+    "la cadena de caracteres en grupos de n cifras, sumarlos e imprimir el resultado.\n"
+    "En caso de no poder dividirse exactamente en grupos de n cifras\n"
+    "se debe rellenar con ceros a la izquierda del primer número.\n";
+
+    char c1[100]{}, c2[100]{};
+    int n{}, sumatoria{}, faltantes{};
+
+    cout << "Ingrese un numero natural\n";
+    Input_Int_Range(1, 2147483647, n);
+
+    cout << "Ingrese la cadena: ";
+    cin >> c1;
+
+    for (int i = 0; i <= 100; i++) {
+        if (c1[i] == '\0' && (i % n) == 0){
+            break;
+        }
+        faltantes = i % n;
+        for (int j = 0; j <= faltantes; j++) {
+            c2[j] = '0';
+        }
+        for (int j = i; j >= 0; j--) {
+            c2[j+faltantes] = c1[j];
+        }
+    }
+
+    cout << c2 << endl;
+
 };
 
 void problema_10(){

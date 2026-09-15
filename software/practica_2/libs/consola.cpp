@@ -1,7 +1,18 @@
-#include <iostream>
+﻿#include <iostream>
 
 using std::cout, std::cin, std::endl;
 
+
+/**
+ * @brief Solicita un entero por consola dentro de un rango [min, max].
+ *
+ * Permite hasta 6 intentos. Si la entrada es válida, la guarda en 'input'.
+ * Si se agotan los intentos, el programa finaliza con error.
+ *
+ * @param min Límite inferior permitido.
+ * @param max Límite superior permitido.
+ * @param input Variable de salida donde se almacena el número válido.
+ */
 void Input_Int_Range(int min, int max, int &input){
     for (int i = 0, temp; i <= 5; i++) {
         cout << ">> ";
