@@ -1,7 +1,7 @@
-#include <iostream>
+﻿#include <iostream>
+#include "problemas.h"
 #include "libs/consola.h"
 #include "libs/cadena.h"
-#include "problemas.h"
 
 using std::cout, std::cin, std::endl;
 
@@ -112,14 +112,43 @@ void problema_6(){
     problema_pendiente();
 };
 
+/*
+
+    un programa que recibe una cadena de caracteres y elimina los caracteres repetidos.
+    Por ejemplo, si se recibe ”bananas”, debe mostrar ”bans”.
+
+*/
 void problema_7(){
-    problema_pendiente();
+    cout << "un programa que reciba una cadena de caracteres y elimine los caracteres repetidos.\n"
+            "Por ejemplo, si se recibe \"bananas\", debe mostrar \"bans\".\n";
+
+    char c1[100]{}, c2[100]{};
+
+    cout << "Ingrese la cadena: ";
+    cin >> c1;
+
+    bool charInChars[128]{};
+    int it{};
+
+    for (char c : c1) {
+        if (!charInChars[int(c)]){
+            c2[it] = c;
+            it++;
+        }
+        charInChars[int(c)] = true;
+    }
+    cout << "Original: " << c1 << ". Sin repetidos: " << c2 << endl;
 };
 
 void problema_8(){
     problema_pendiente();
 };
 
+/*
+
+
+
+*/
 void problema_9(){
     problema_pendiente();
 };
@@ -144,8 +173,38 @@ void problema_14(){
     problema_pendiente();
 };
 
+/*
+
+    @brief Programa para calcular la intersección entre dos rectángulos.
+
+    Este programa permite determinar el área de superposición (intersección)
+    entre un par de rectángulos dadas 2 referencias por rectangulo
+
+    - Coordenadas X,Y | Ancho Y Altura (X Y ANCHO ALTO)
+
+    NOTA: Las coordenadas en el eje Y aumentan hacia abajo y en el eje X aumentas hacia la derecha
+
+*/
 void problema_15(){
-    problema_pendiente();
+    int A[4]{}, B[4]{}, C[4]{};
+
+    cout << "Ingrese la coodenada x de A:";
+    cin >> A[0];
+    cout << "Ingrese la coodenada y de A:";
+    cin >> A[1];
+    cout << "Ingrese el ancho de A:";
+    cin >> A[2];
+    cout << "Ingrese la atura y de A:";
+    cin >> A[3];
+
+    cout << "Ingrese la coodenada x de B:";
+    cin >> B[0];
+    cout << "Ingrese la coodenada y de B:";
+    cin >> B[1];
+    cout << "Ingrese el ancho de B:";
+    cin >> B[2];
+    cout << "Ingrese la atura y de B:";
+    cin >> B[3];
 };
 
 void problema_16(){
