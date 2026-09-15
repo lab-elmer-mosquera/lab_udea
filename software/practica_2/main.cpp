@@ -1,11 +1,12 @@
-#include <iostream>
+﻿#include <iostream>
 #include "libs/consola.h"
 #include "problemas.h"
 
-using namespace std;
+using std::cout;
 
 int main()
 {
+    system("chcp 65001 > nul");
     int n{};
     cout << "EJECUTAR PROGRAMA\n"
             "    1   a   " << TOTAL_PROBLEMAS << "     \n";
