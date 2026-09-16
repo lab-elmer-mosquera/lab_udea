@@ -166,8 +166,24 @@ void problema_9(){
     cout << "Ingrese la cadena: ";
     cin >> c1;
 
+    for (char c : c1) {
+        if(bool isDigit = CharIsDigitInt(c); isDigit) {
+            continue;
+        }
+        if (c == 0){
+            break;
+        }
+        cout << "Entrada invalida" << endl;
+        return;
+    }
+
     for (int i = 0; i <= 100; i++) {
-        if (c1[i] == '\0' && (i % n) == 0){
+        if (c1[i] != '\0')
+            continue;
+        if ((i % n) == 0){
+            for (int j = i; j >= 0; j--) {
+                c2[j] = c1[j];
+            }
             break;
         }
         faltantes = i % n;
@@ -177,6 +193,7 @@ void problema_9(){
         for (int j = i; j >= 0; j--) {
             c2[j+faltantes] = c1[j];
         }
+        break;
     }
 
     cout << c2 << endl;

@@ -67,6 +67,42 @@ void IntToChar(int num, char *string){
     string[j] = '\0';
 }
 
+/**
+ * @brief CharToInt
+ * Convierte un caracter (char) tipo digito a int
+ * @param c
+ * @param int n referencia (int &)
+ */
+void CharToInt(char c, int &n){
+    if (!CharIsDigitInt(c)){
+        cout << "CharToInt(error): No es un digito valido para conversion" << endl;
+        EXIT_FAILURE;
+    }
+    int auxInt = c - '0';
+    n = auxInt;
+}
+
+
+void CharsToInt(char *cadena, int &n){
+    int auxInt{}, it{}, d{};
+
+    for (char c = cadena[it]; c != '\0'; it++, c = cadena[it]) {
+        CharToInt(c,d);
+        auxInt = (auxInt * 10) + d;
+    }
+
+}
+
+/**
+ * @brief CharIsDigitInt
+ * Verifica si un caracter es un caracter tipo digito numerico
+ * @param c
+ * @return true / false
+ */
+bool CharIsDigitInt(char c){
+    bool auxValidation = c >= '0' && c <= '9';
+    return auxValidation;
+}
 
 
 /**
