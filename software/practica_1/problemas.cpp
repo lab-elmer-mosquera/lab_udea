@@ -470,6 +470,12 @@ void problema_10(){
 
     for (int it = 1, count = 0; count <= n; it++) {
         noEsPrimo = false;
+        if (it == 1){
+            nPrimo = it;
+            break;
+        }
+
+
         for (int i = 1; i < it; i++) {
             if (it%i==0 && i!=it && i>1){
                 noEsPrimo=true;
